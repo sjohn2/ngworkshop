@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Video List</h3>
+    </div>
+    <div   *ngFor='let video of videoData; let i = index' [class.active]= "activeIndex == i" (click)=setActive(i)>
+      <div class="panel-body" >
+        <app-video [video]="video"></app-video>
+      </div>
+     </div>
+</div>
+
