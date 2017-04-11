@@ -10,10 +10,15 @@ import { StatGraphsComponent } from '../stat-graphs/stat-graphs.component';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  selected;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  videoSelected(video){
+    console.log(video);
+    this.selected =  video; 
   }
 
 }

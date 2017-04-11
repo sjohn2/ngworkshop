@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-3">
-      <app-video-list></app-video-list>
+      <app-video-list (onSelectedVideo)="videoSelected($event)" ></app-video-list>
     </div>
     <div class="col-xs-6">
-      <app-video-viewer></app-video-viewer>
+      <app-video-viewer [video]="selected"></app-video-viewer>
       <app-stat-graphs></app-stat-graphs>
     </div>
     <div class="col-xs-3">

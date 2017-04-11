@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 
 
 
@@ -172,6 +172,7 @@ const VIDEO_DATA: Array<IVideo> = [
 })
 export class VideoListComponent implements OnInit {
 
+  @Output() onSelectedVideo = new EventEmitter<IVideo>();
   videoData: IVideo[] = VIDEO_DATA;
   activeIndex: number;
   constructor() { }
@@ -179,8 +180,9 @@ export class VideoListComponent implements OnInit {
   ngOnInit() {
   }
 
- setActive(index: number): void{
-
+ setActive(index: number, video:IVideo): void{
+  console.log("from list",video);
+  this.onSelectedVideo.emit(video);
    this.activeIndex = index;
 
  }
