@@ -8,7 +8,7 @@
       <app-stat-graphs></app-stat-graphs>
     </div>
     <div class="col-xs-3">
-       <app-stat-filters ></app-stat-filters>
+       <app-stat-filters (onSendToParent)="dashboardCaptureFilterEvent($event)"></app-stat-filters>
     </div>    
   </div>
 </div>

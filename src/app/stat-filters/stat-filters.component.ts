@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-stat-filters',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StatFiltersComponent implements OnInit {
 
+  @Output() onSendToParent:EventEmitter<any> = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  emitToParent(){
+    console.log("send to parent");
+    this.onSendToParent.emit("test message");
+
   }
 
 }
