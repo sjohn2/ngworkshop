@@ -7,6 +7,7 @@ import { StatFiltersComponent } from './stat-filters/stat-filters.component';
 import { StatGraphsComponent } from './stat-graphs/stat-graphs.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { VideoComponent } from './video/video.component';
+import { VideoService } from './services/video.service';
 
 const routes: Routes = [
   { path: '',redirectTo:'dashboard', pathMatch: 'full'},
@@ -27,5 +28,6 @@ const routes: Routes = [
     DashboardComponent,
     VideoComponent
   ],
+  providers: [VideoService],
 })
 export class AppRoutingModule { }
